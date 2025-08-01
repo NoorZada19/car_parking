@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Car Parking | Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background-color: #f4f6f9;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      height: 100%;
+      background-color: #1e1f2b;
+      color: white;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 240px;
+      right: 0;
+      height: 60px;
+      background-color: #6c63ff;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      z-index: 1000;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 240px;
+      right: 0;
+      height: 50px;
+      background-color: #1e1f2b;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .main-content {
+      position: absolute;
+      top: 60px;
+      bottom: 50px;
+      left: 240px;
+      right: 0;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .table-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #6c63ff;
+      color: white;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .navbar {
+        left: 0;
+      }
+
+      .footer {
+        left: 0;
+      }
+
+      .main-content {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>🚗 SmartPark</h2>
+    <ul>
+      <li>🏠 Dashboard</li>
+      <li>📅 Bookings</li>
+      <li>📍 Slots</li>
+      <li>🛠 Complaints</li>
+      <li>📞 Contact</li>
+    </ul>
+  </div>
+
+  <div class="navbar">
+    Welcome Admin | Smart Dubai Car Parking
+  </div>
+
+  <div class="main-content">
+    <div class="table-container">
+      <h2>All Bookings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Slot</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Demo content: repeat rows to show scroll -->
+          <script>
+            for (let i = 1; i <= 50; i++) {
+              document.write(`
+                <tr>
+                  <td>${i}</td>
+                  <td>User ${i}</td>
+                  <td>A-${i}</td>
+                  <td>2025-07-26</td>
+                  <td>${8 + (i % 12)}:00 AM</td>
+                  <td>Booked</td>
+                </tr>
+              `);
+            }
+          </script>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 SmartParking | support@smartparking.com | +971 50 123 4567
+  </div>
+
+</body>
+</html>

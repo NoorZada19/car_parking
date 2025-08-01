@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Car Ready</title>
+  <link href="../bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card {
+      margin: 200px 0px;
+      width: 100%;
+      max-width: 500px;
+      border: none;
+      border-radius: 15px;
+      padding: 30px 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      background: #fff;
+      text-align: center;
+    }
+
+    .card img {
+      width: 70px;
+      margin-bottom: 15px;
+
+    }
+
+    .image-card {
+      animation-name: leftanimation;
+      animation-duration: 2s;
+    }
+
+    .card h4 {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn-green {
+      background-color: #2e7d32;
+      color: white;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-green:hover {
+      background-color: #1b5e20;
+    }
+
+    @keyframes leftanimation {
+      from {
+        margin-left: -900px;
+      };
+      to {
+        margin-left: 0px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-4 offset-2 image-card">
+        <img src="../images/login/24.webp" class="form-control" alt="Car Icon">
+      </div>
+      <div class="col-md-5 text-card ">
+        <div class="card  w-100">
+          <div class="card-header">
+            <h4>Get Your Car Ready</h4>
+          </div>
+          <div class="card-body">
+            <p class="text-muted">Please enter your Ticket No. or Reservation ID to proceed.</p>
+            <input type="text" id="ticketInput" class="form-control mb-3" placeholder="e.g. #ABC123" />
+            <button class="btn btn-green w-100" onclick="search()">Search</button>
+            <a href="index.html" class="btn btn-green mt-3 w-100" type="reset">Back Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      function search() {
+        const ticket = document.getElementById('ticketInput').value.trim();
+        if (!ticket) {
+          alert("Please enter a valid Ticket No. or Reservation ID.");
+        } else {
+          alert("Searching for: " + ticket);
+          // Perform AJAX or redirection logic here
+        }
+      }
+    </script>
+  </div>
+</body>
+
+</html>

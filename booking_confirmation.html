@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Confirmation – SmartParking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="../bootstrap-icon.css" rel="stylesheet">
+  <link href="../bootstrap.min.css" rel="stylesheet">
+  <link href="../bundddle.min.js" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    
+
+    /* Layout */
+    .main {
+      background-image: url(../images/parking/19.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 30px;
+    }
+
+    .left-image {
+      flex: 1;
+      min-width: 280px;
+      max-width: 450px;
+    }
+
+    .left-image img {
+      width: 100%;
+      height: 500px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    .right-content {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.06);
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      color: #4CAF50;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .details p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .qr-code {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .qr-code img {
+      width: 130px;
+      height: 130px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #584ed6;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+   
+  </style>
+</head>
+<body>
+
+
+
+<!-- Main Content -->
+<section class="main">
+  
+      
+  <div class="right-content">
+    <h2 class="title">Booking Confirmed!</h2>
+    <p class="subtitle">Thank you! Your slot has been successfully reserved.</p>
+
+    <div class="details">
+      <p><strong class="text-primary">Booking ID:</strong> P123456789</p>
+      <p><strong class="text-primary">Parking Location:</strong> City Tower, Downtown Dubai</p>
+      <p><strong class="text-primary">Date:</strong> July 28, 2025</p>
+      <p><strong class="text-primary">Time:</strong> 10:00 AM – 2:00 PM</p>
+      <p><strong class="text-primary">Slot Number:</strong> A-17</p>
+    </div>
+
+    <div class="qr-code">
+      <p class="text-warning">Scan this QR code at the entrance</p>
+      <img src="../images/payment/card4.jpg" alt="QR Code" />
+    </div>
+
+    <div class="buttons mb-0">
+      <a href="#" class="btn">Dashboard</a>
+      <a href="booking.html" class="btn">Book Another</a>
+    </div>
+  </div>
+</section>
+
+
+
+</body>
+</html>

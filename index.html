@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Car Parking</title>
+  <link href="../bootstrap.min.css" rel="stylesheet">
+  <link href="../bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .pricing-card {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .pricing-card h4 {
+      font-weight: 600;
+    }
+
+    .pricing-card .display-6 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+
+    .pricing-card::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05), transparent 60%);
+      top: -50%;
+      left: -50%;
+      z-index: 0;
+    }
+
+    .pricing-card>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      background: url('../images/parking/5.jpg') center/cover no-repeat;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 90vh;
+      color: white;
+      /* display: flex; */
+      /* align-items: left; */
+      justify-content: center;
+      flex-direction: column;
+      text-shadow: 2px 2px 8px black;
+      /* margin-left: 200px; */
+
+
+    }
+
+    .hero h2 {
+      /* position: relative; */
+      padding-top: 100px;
+    }
+
+    .hero p,
+    .hero h2,
+    .hero a {
+      margin-left: 100px;
+    }
+
+    .hero h2,
+    .hero p,
+    .hero a {
+      animation-name: herosection;
+      animation-duration: 1s;
+    }
+
+
+    .services i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #0d6efd;
+    }
+
+    .pricing .card {
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial {
+      background-color: #f9f9f9;
+      padding: 40px 20px;
+    }
+
+    .faq .accordion-button:not(.collapsed) {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 30px 0;
+    }
+
+    .navbar-brand {
+      align-items: center;
+    }
+
+    .navbar-brand .logo {
+      height: 55px;
+      width: 150px;
+    }
+
+    .parent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0px;
+      line-height: 50px;
+    }
+
+    @keyframes herosection {
+      from {
+        margin-left: -1020px;
+      }
+
+      ;
+
+      to {
+        margin-left: 10px;
+      }
+
+    }
+
+    .services-images {
+      height: 300px;
+      overflow: hidden;
+      width: 100%;
+      transition: transform 2s ease;
+      overflow: hidden;
+    }
+
+    .services .card {
+      border-radius: 20px;
+      border: 0px;
+      position: relative;
+      overflow: hidden;
+
+    }
+
+    .services .card h5 {
+      color: #4CAF50;
+      bottom: 0px;
+      left: 40px;
+      position: absolute;
+      overflow: hidden;
+
+    }
+
+    .services .card p {
+      color: #4CAF50;
+      bottom: 20px;
+      left: 40px;
+      position: absolute;
+      overflow: hidden;
+
+    }
+
+    .services img:hover {
+      transform: scale(1.07);
+    }
+
+    /* Style The Dropdown Button */
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-text {
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: white;
+      width: 100%;
+      padding: 15px;
+    }
+
+    .gallery-text h5 {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .gallery-text p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Divider style */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-divider div {
+      flex-grow: 1;
+      height: 2px;
+      background-color: #333;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.08);
+      transition: all 1s;
+    }
+
+    .animation_picture {
+      align-items: center;
+      text-align: right;
+    }
+
+    .animation_picture .picture {
+      border: 2px solid white;
+      opacity: 0.7;
+      flex-wrap: wrap;
+
+      animation-name: animation_picture;
+      animation-duration: 30s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      /* smooth constant speed */
+    }
+
+    .animation_picture img {
+      border-radius: 100%;
+      width: 100%;
+      height: 350px;
+    }
+
+    @keyframes animation_picture {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+        /* or 360deg, or any custom value */
+      }
+    }
+
+
+
+    /* testimonial css */
+    .testimonials {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fff;
+    }
+
+    .testimonials h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .testimonial-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      text-align: left;
+      transition: 0.3s;
+    }
+
+    .testimonial.active {
+      background: #ffb400;
+      color: #fff;
+    }
+
+    .testimonial img {
+      position: absolute;
+      top: -35px;
+      left: 20px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      width: 60px;
+      height: 60px;
+    }
+
+    .testimonial .content {
+      margin-top: 40px;
+    }
+
+    .testimonial p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .testimonial h3 {
+      margin: 5px 0 0;
+      font-size: 18px;
+    }
+
+    .testimonial span {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 5px;
+      background: #bbb;
+      display: inline-block;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background: #ffb400;
+    }
+
+    .about .card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .about_image {
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 1s ease-out;
+    }
+
+    .about_image:hover {
+      border: #0d6efd solid red;
+      transform: scale(1.05);
+      transition: all 1s ease-in;
+    }
+
+    .scroll-animate {
+      transform: translateY(60px);
+      opacity: 0;
+      transition: all 0.8s ease-out;
+    }
+
+    .scroll-animate.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg  bg-warning sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex justify-content-center" href="#">
+          <img class="logo" src="../images/logo/1.png" alt="">
+          <h4>SmartParking</h4>
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navMenu">
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item "><a class="nav-link active" href="#">Home</a></li>
+
+            <li class="nav-item">
+              <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <div class="dropdown-menu m-0">
+                  <a class="dropdown-item" href="#services">Services</a>
+                  <a class="dropdown-item" href="#about">About Us</a>
+                  <a class="dropdown-item" href="#pricing">Rates</a>
+                  <a class="dropdown-item" href="#testimonials">Testimonials</a>
+                  <a class="dropdown-item" href="#contact">Contact Us</a>
+                  <a class="dropdown-item" href="#complaint">complaine</a>
+                  <a class="dropdown-item" href="#gallery">Gallery</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item "><a class="nav-link" href="booking.html">Booking</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" href="#">User's Services</a>
+              <div class="dropdown-menu dropdown-content">
+                <a class="dropdown-item" href="getcar.html"><b>Get Car</b></a>
+                <a class="dropdown-item" href="registeration.html"><b>SignUp</b></a>
+                <a class="dropdown-item" href="complane.html"><b>Complane</b></a>
+                <a class="dropdown-item" href="login.html"><b>Login Account</b></a>
+              </div>
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="row pt-4">
+        <div class="col-sm-7">
+          <h2 class="display-5">Find & Book Parking In Seconds</h2>
+          <p class="lead">Simple. Fast. Reliable. Reserve your parking spot online!</p>
+          <a href="booking.html" class="btn btn-primary btn-lg">Book Now</a>
+        </div>
+        <div class="col-sm-3 offset-1">
+          <div class="animation_picture">
+            <img class="picture" src="../images/parking/20.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-5 text-center services">
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div class="flex-grow-1 border-dark border-top"></div>
+          <h1 class="fw-semibold">Services Provided To Our Users</h1>
+          <div class="flex-grow-1 border-dark border-top"></div>
+        </div>
+        <h2 class="mb-4 text-success "><b>Our Services</b></h2>
+        <div class="row">
+          <div class="col-md-4 scroll-animate">
+            <div class="card">
+              <img class="services-images" src="../images/cctv/search.jpg" alt="">
+              <h5>Search Parking</h5>
+              <p>Find available parking spots near you instantly.</p>
+            </div>
+          </div>
+          <div class="col-md-4 scroll-animate">
+            <div class="card">
+              <img class="services-images" src="../images/login/24.webp" alt="">
+              <h5>Online Booking</h5>
+              <p>Book your spot in advance from any device.</p>
+            </div>
+          </div>
+          <div class="col-md-4 scroll-animate">
+            <div class="card">
+              <img class="services-images" src="../images/cctv/4.jpg" alt="">
+              <h5>24/7 Security</h5>
+              <p>All our parking lots are secured and monitored.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 about scroll-animate">
+            <div class="card">
+              <img src="../images/login/25.webp" class="img-fluid  about_image w-100 " height="400px">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card border-0  scroll-animate">
+              <div class="card-header">
+                <h1><b> About Our Parking</b></h1>
+              </div>
+              <div class="card-body  p-5">
+                <p class="py-4">We are committed to solving parking challenges in crowded cities. Our digital system
+                  lets
+                  you search, book, and park without hassle.
+                  >We are committed to solving parking challenges in crowded cities. Our digital system lets you search,
+                  book, and park without hassle.>We are committed to solving parking challenges in crowded cities. Our
+                  digital system lets you search, book, and park without hassle.>We are committed to solving parking
+                  challenges in crowded cities. Our digital system lets you search, book, and park without hassle.>We
+                  are
+                  committed to solving parking challenges in crowded cities. Our digital system lets you search, book,
+                  and
+                  park without hassle.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container my-5" id="gallery">
+      <div class="section-divider">
+        <div></div>
+        <h1 class="fw-semibold text-center text-dark">Gallery Of Our Parking</h1>
+        <div></div>
+      </div>
+      <h2 class="text-center text-success mb-4">Park Your Car Safely</h2>
+
+      <div class="row g-4">
+        <div class="col-md-4 scroll-animate">
+          <div class="gallery-card">
+            <img src="../images/parking/10.jpg" alt="Parking Area 1">
+            <div class="gallery-text">
+              <h5>Secure Entry</h5>
+              <p>24/7 monitored entrance with access control.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 scroll-animate">
+          <div class="gallery-card">
+            <img src="../images/parking/11.jpg" alt="Parking Area 2">
+            <div class="gallery-text">
+              <h5>Wide Spaces</h5>
+              <p>Spacious slots for all vehicle sizes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 scroll-animate">
+          <div class="gallery-card">
+            <img src="../images/parking/12.jpg" alt="Parking Area 3">
+            <div class="gallery-text">
+              <h5>Indoor Parking</h5>
+              <p>Rain-protected and climate-controlled area.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 scroll-animate">
+          <div class="gallery-card">
+            <img src="../images/parking/13.jpg" alt="Parking Area 4">
+            <div class="gallery-text">
+              <h5>Clean Premises</h5>
+              <p>Daily cleaning ensures a tidy experience.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 scroll-animate">
+          <div class="gallery-card">
+            <img src="../images/parking/14.jpg" alt="Parking Area 5">
+            <div class="gallery-text">
+              <h5>LED Lighting</h5>
+              <p>Bright lights for night safety and ease.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 scroll-animate">
+          <div class="gallery-card">
+            <img src="../images/parking/15.jpg" alt="Parking Area 6">
+            <div class="gallery-text">
+              <h5>Exit Lane</h5>
+              <p>Smart exit gate with RFID scanning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pricing -->
+    <section id="pricing" class="py-5 pricing text-center">
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div class="flex-grow-1 border-dark border-top"></div>
+          <h1 class="fw-semibold">Valueable and Perfect Parking Rates</h1>
+          <div class="flex-grow-1 border-dark border-top"></div>
+        </div>
+        <h2 class="mb-5 text-warning">Parking Rates</h2>
+        <div class="row">
+          <div class="col-md-4 scroll-animate mb-3">
+            <div class="card pricing-card p-4">
+              <h4>Hourly</h4>
+              <p class="display-6">Rs 50</p>
+              <p>Per Hour Parking</p>
+            </div>
+          </div>
+          <div class="col-md-4 scroll-animate mb-3">
+            <div class="card pricing-card p-4">
+              <h4>Daily</h4>
+              <p class="display-6">Rs 300</p>
+              <p>All Day Access</p>
+            </div>
+          </div>
+          <div class="col-md-4 scroll-animate mb-3">
+            <div class="card pricing-card p-4">
+              <h4>Monthly</h4>
+              <p class="display-6">Rs 5000</p>
+              <p>Unlimited Parking</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Complaint Section -->
+    <!-- <section id="complaint" class="container my-5">
+      <h2 class="text-center section-title">Facing an Issue? Submit a Complaint</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 complaint-box">
+          <form id="complaintForm">
+            <div class="mb-3">
+              <label for="issueType" class="form-label">Issue Category</label>
+              <select class="form-select" id="issueType" required>
+                <option value="">Select</option>
+                <option value="slot">Slot not available</option>
+                <option value="payment">Payment issue</option>
+                <option value="entry">Entry/Exit problem</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="details" class="form-label">Describe Your Issue</label>
+              <textarea class="form-control" id="details" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit Complaint</button>
+            <div class="alert alert-info mt-3 d-none" id="complaintMsg">
+              📩 Your complaint has been submitted. Our support team will contact you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- Testimonials -->
+
+    <section class="testimonials" id="testimonials">
+      <h2>Our Clients Say!!!</h2>
+      <div class="testimonial-container">
+        <div class="testimonial active">
+          <div class="content">
+            <p>"Parking here is super easy and safe. Highly recommended!"</p>
+            <h3>Client Name</h3>
+            <span>Car Owner</span>
+          </div>
+          <img src="../images/parking/10.jpg" alt="Client">
+        </div>
+
+       
+
+        <div class="testimonial">
+          <div class="content">
+            <p>"Quick service and very friendly staff. Excellent experience!"</p>
+            <h3>Client Name</h3>
+            <span>Frequent User</span>
+          </div>
+          <img src="../images/parking/16.jpg" alt="Client">
+        </div>
+        <div class="testimonial">
+          <div class="content">
+            <p>"Quick service and very friendly staff. Excellent experience!"</p>
+            <h3>Client Name</h3>
+            <span>Frequent User</span>
+          </div>
+          <img src="../images/parking/16.jpg" alt="Client">
+        </div>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+    <!-- FAQ -->
+    <section class="faq py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+
+        <div class="row">
+          <!-- FAQ Accordion -->
+          <div class="col-lg-6 scroll-animate mb-4">
+            <div class="accordion" id="faqAccordion">
+
+              <!-- Question 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1"
+                    aria-expanded="true" aria-controls="q1">
+                    How do I book a spot?
+                  </button>
+                </h2>
+                <div id="q1" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    You can book through our website or mobile app in just a few clicks.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
+                    Is my car safe?
+                  </button>
+                </h2>
+                <div id="q2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes, all our parking areas are monitored 24/7 by security and CCTV.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Ask a Question Form -->
+          <div class="col-lg-6 scroll-animate">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h4 class="mb-3 text-center">Ask a Question</h4>
+                <form>
+                  <div class="mb-3">
+                    <label for="clientName" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="Enter your name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="clientEmail" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="clientEmail" placeholder="Enter your email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="clientQuestion" class="form-label">Your Question</label>
+                    <textarea class="form-control" id="clientQuestion" rows="4"
+                      placeholder="Write your question..."></textarea>
+                  </div>
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Submit Question</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <form class="row g-3">
+          <div class="col-md-6 scroll-animate">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="col-12">
+            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="container">
+        <p>© 2025 SmartParking. All Rights Reserved.</p>
+        <p>Email: contact@smartparking.com | Phone: +92 300 1234567</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../bundle.min.js"></script>
+  <script>
+    const testimonials = document.querySelectorAll(".testimonial");
+    const dots = document.querySelectorAll(".dot");
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        testimonials.forEach(t => t.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+
+        testimonials[index].classList.add("active");
+        dot.classList.add("active");
+      });
+    });
+  </script>
+</body>
+
+</html>
+<script src="jquery.js"></script>
+<script src="../bundddle.min.js"></script>
+<script>
+  function revealOnScroll() {
+    const elements = document.querySelectorAll('.scroll-animate');
+    const triggerBottom = window.innerHeight * 0.9;
+
+    elements.forEach(el => {
+      const elTop = el.getBoundingClientRect().top;
+
+      if (elTop < triggerBottom) {
+        el.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll); // page load pr bhi check
+</script>
